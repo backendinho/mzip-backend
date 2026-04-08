@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: ${MONGODB_URI:mongodb://localhost:27017/pubgclan}
+      uri: ${MONGODB_URI:}
 
 discord:
   bot:
@@ -13,7 +13,7 @@ discord:
     id: ${DISCORD_CLIENT_ID:}
     secret: ${DISCORD_CLIENT_SECRET:}
   redirect:
-    uri: ${DISCORD_REDIRECT_URI:http://localhost:5173/auth/callback}
+    uri: ${DISCORD_REDIRECT_URI:}
   webhook:
     url: ${DISCORD_WEBHOOK_URL:}
   guild:
