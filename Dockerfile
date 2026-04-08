@@ -21,12 +21,5 @@ WORKDIR /app
 # Copy JAR from builder
 COPY --from=builder /app/target/*.jar app.jar
 
-# Install curl for health check
-RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-
-# Health check - checks if the application port is open
-HEALTHCHECK --interval=30s --timeout=3s --start-period=10s --retries=3 \
-  CMD curl -f http://localhost:8080/ || exit 1
-
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
