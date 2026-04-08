@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/pubgclan}
+
+discord:
+  bot:
+    token: ${DISCORD_BOT_TOKEN:}
+  client:
+    id: ${DISCORD_CLIENT_ID:}
+    secret: ${DISCORD_CLIENT_SECRET:}
+  redirect:
+    uri: ${DISCORD_REDIRECT_URI:http://localhost:5173/auth/callback}
+  webhook:
+    url: ${DISCORD_WEBHOOK_URL:}
+  guild:
+    id: ${DISCORD_GUILD_ID:}
+  channel:
+    id: ${DISCORD_CHANNEL_ID:}
+
+jwt:
+  secret: ${JWT_SECRET:pubgclan-secret-key-must-be-at-least-256-bits-long}
+  expiration: 86400000
+
+cors:
+  allowed-origins: http://localhost:5173
