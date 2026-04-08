@@ -11,7 +11,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/exemptions")
-@CrossOrigin(origins = "http://localhost:3000")
 public class ExemptionController {
 
     @Autowired
